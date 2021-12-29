@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy
+spec:
+  replicas: 1
+  revisionHistoryLimit: 0
+  template:
+    spec:
+      containers:
+        - name: keycloak
+          args:
+            - -Dkeycloak.profile=preview
+            - -Dkeycloak.profile.feature.token_exchange=enabled
+            - -b 0.0.0.0
+          image: quay.io/keycloak/keycloak:latest
+          envFrom:
+            - configMapRef:
+                name: config
+          ports:
+            - containerPort: 8080
+              name: http
+          volumeMounts:
+            - mountPath: /keycloak/import
+              name: import
+              readOnly: true
+      volumes:
+        - name: import
+          configMap:
+            name: import
