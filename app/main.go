@@ -23,7 +23,7 @@ type album struct {
 var (
 	port     = flag.Int("port", 8000, "Port for the webserver.")
 	api      = flag.String("api", "http://localhost:9000/albums", "Address for the api call.")
-	redirect = flag.String("redirect", "http://localhost", "Base uri for redirect.")
+	redirect = flag.String("redirect", "http://localhost", "The full redirect uri to use (host:port, without callback uri).")
 )
 
 var (
@@ -43,7 +43,7 @@ func main() {
 	var data string
 	var accessToken string
 
-	redirectURI := fmt.Sprintf("%v:%v%v", *redirect, *port, callbackPath)
+	redirectURI := fmt.Sprintf("%v%v", *redirect, callbackPath)
 	cookieHandler := httphelper.NewCookieHandler(key, key, httphelper.WithUnsecure())
 	options := []rp.Option{
 		rp.WithCookieHandler(cookieHandler),

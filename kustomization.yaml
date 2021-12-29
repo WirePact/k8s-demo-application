@@ -6,3 +6,16 @@ namespace: k8s-mesh-demo
 resources:
   - namespace.yaml
   - keycloak
+  - app
+  - api
+
+images:
+  - name: keycloak
+    newName: quay.io/keycloak/keycloak
+    newTag: latest
+  - name: app
+    newName: ghcr.io/wirepact/k8s-demo-application-app
+    newTag: latest
+  - name: api
+    newName: ghcr.io/wirepact/k8s-demo-application-api
+    newTag: latest
