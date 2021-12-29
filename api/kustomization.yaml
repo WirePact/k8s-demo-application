@@ -3,6 +3,9 @@ kind: Kustomization
 
 namePrefix: api-
 
+configurations:
+  - config.yaml
+
 commonLabels:
   app.kubernetes.io/part-of: k8s-demo-app
   app.kubernetes.io/component: demo-api
@@ -11,3 +14,9 @@ resources:
   - deployment.yaml
   - service.yaml
   - ingress.yaml
+  - mesh-participant.yaml
+
+secretGenerator:
+  - name: credentials
+    literals:
+      - 713bbdcf-9dee-43b1-90e7-b839eede898b=dXNlcjpwYXNz

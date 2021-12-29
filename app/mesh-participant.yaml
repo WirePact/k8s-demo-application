@@ -1,0 +1,12 @@
+apiVersion: wirepact.ch/v1alpha1
+kind: MeshParticipant
+metadata:
+  name: participant
+spec:
+  deployment: deploy
+  service: svc
+  translator: keycloak-oidc-translator
+  env:
+    ISSUER: http://keycloak.localhost/auth/realms/wirepact-demo
+    CLIENT_ID: demo-translator
+    CLIENT_SECRET: tUz5fnNXXIZXaTUVdjY7nE6qP2dt7r5y

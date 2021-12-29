@@ -1,0 +1,10 @@
+apiVersion: wirepact.ch/v1alpha1
+kind: MeshParticipant
+metadata:
+  name: participant
+spec:
+  deployment: deploy
+  service: svc
+  translator: basic-auth-translator
+  env:
+    KUBERNETES_SECRET: credentials

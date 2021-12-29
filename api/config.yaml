@@ -1,0 +1,8 @@
+nameReference:
+  - kind: Secret
+    version: v1
+    fieldSpecs:
+      - path: spec/env/KUBERNETES_SECRET
+        kind: MeshParticipant
+        version: v1alpha1
+        apiGroup: wirepact.ch

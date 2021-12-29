@@ -9,6 +9,9 @@ resources:
   - app
   - api
 
+configurations:
+  - config.yaml
+
 images:
   - name: keycloak
     newName: quay.io/keycloak/keycloak

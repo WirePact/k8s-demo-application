@@ -1,0 +1,15 @@
+nameReference:
+  - kind: Service
+    version: v1
+    fieldSpecs:
+      - path: spec/service
+        kind: MeshParticipant
+        version: v1alpha1
+        apiGroup: wirepact.ch
+  - kind: Deployment
+    version: v1
+    fieldSpecs:
+      - path: spec/deployment
+        kind: MeshParticipant
+        version: v1alpha1
+        apiGroup: wirepact.ch

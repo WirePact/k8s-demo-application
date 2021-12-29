@@ -11,6 +11,7 @@ resources:
   - deployment.yaml
   - service.yaml
   - ingress.yaml
+  - mesh-participant.yaml
 
 configMapGenerator:
   - name: config
