@@ -4,6 +4,7 @@ metadata:
   name: participant
 spec:
   deployment: deploy
+  targetPort: 8080
   service: svc
   translator: basic-auth-translator
   env:

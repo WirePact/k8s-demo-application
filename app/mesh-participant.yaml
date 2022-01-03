@@ -5,6 +5,7 @@ metadata:
 spec:
   deployment: deploy
   service: svc
+  targetPort: 8080
   translator: keycloak-oidc-translator
   env:
     ISSUER: http://keycloak.localhost/auth/realms/wirepact-demo
