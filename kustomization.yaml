@@ -8,6 +8,7 @@ resources:
   - keycloak
   - app
   - api
+  - sa-binding.yaml
 
 configurations:
   - config.yaml
