@@ -6,6 +6,6 @@ spec:
   deployment: deploy
   targetPort: 8080
   service: svc
-  translator: basic-auth-translator
+  translator: wirepact-operator-basic-auth-translator
   env:
     KUBERNETES_SECRET: credentials
