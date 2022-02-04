@@ -5,7 +5,7 @@ namespace: k8s-mesh-demo
 
 resources:
   - namespace.yaml
-  - keycloak
+  - idp
   - app
   - api
   - sa-binding.yaml
@@ -14,12 +14,12 @@ configurations:
   - config.yaml
 
 images:
-  - name: keycloak
-    newName: quay.io/keycloak/keycloak
+  - name: provider
+    newName: ghcr.io/wirepact/demo-applications/oidc-provider
     newTag: latest
   - name: app
-    newName: ghcr.io/wirepact/k8s-demo-application-app
+    newName: ghcr.io/wirepact/demo-applications/oidc-app
     newTag: latest
   - name: api
-    newName: ghcr.io/wirepact/k8s-demo-application-api
+    newName: ghcr.io/wirepact/demo-applications/basic-auth-api
     newTag: latest

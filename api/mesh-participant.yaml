@@ -6,6 +6,7 @@ spec:
   deployment: deploy
   targetPort: 8080
   service: svc
-  translator: wirepact-operator-basic-auth-translator
+  translator: basic-auth
   env:
-    KUBERNETES_SECRET: credentials
+    K8S_SECRET_NAME: credentials
+    MODE: kubernetes

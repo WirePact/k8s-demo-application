@@ -5,9 +5,10 @@ metadata:
 spec:
   deployment: deploy
   service: svc
-  targetPort: 8080
-  translator: wirepact-operator-keycloak-oidc-translator
+  targetPort: 3000
+  translator: token-exchange
   env:
-    ISSUER: http://keycloak.localhost/auth/realms/wirepact-demo
-    CLIENT_ID: demo-translator
-    CLIENT_SECRET: tUz5fnNXXIZXaTUVdjY7nE6qP2dt7r5y
+    ISSUER: http://idp.localhost
+    CLIENT_ID: wirepact
+    CLIENT_SECRET: secret
+    AUTH_TYPE: client-credentials

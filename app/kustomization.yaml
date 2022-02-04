@@ -16,5 +16,8 @@ resources:
 configMapGenerator:
   - name: config
     literals:
-      - ISSUER=http://keycloak.localhost/auth/realms/wirepact-demo
-      - CLIENT_ID=demo-app
+      - OIDC_ISSUER=http://idp.localhost
+      - OIDC_CLIENT_ID=wirepact
+      - OIDC_CLIENT_SECRET=secret
+      - NEXTAUTH_URL=http://app.localhost/
+      - API_URL=http://api.localhost/swapi/people

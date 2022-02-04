@@ -16,7 +16,14 @@ resources:
   - ingress.yaml
   - mesh-participant.yaml
 
+configMapGenerator:
+  - name: config
+    literals:
+      - PORT=8080
+      - AUTH_USERNAME=foo
+      - AUTH_PASSWORD=bar
+
 secretGenerator:
   - name: credentials
     literals:
-      - 713bbdcf-9dee-43b1-90e7-b839eede898b=dXNlcjpwYXNz
+      - foo=foo:bar

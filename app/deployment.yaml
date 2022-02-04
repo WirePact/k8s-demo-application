@@ -10,29 +10,15 @@ spec:
       hostAliases:
         - ip: '192.168.65.2'
           hostnames:
-            - 'wirepact-api.localhost'
-            - 'wirepact-app.localhost'
-            - 'keycloak.localhost'
+            - 'api.localhost'
+            - 'app.localhost'
+            - 'idp.localhost'
       containers:
         - name: app
-          args:
-            - -port=8080
-            - -redirect=http://wirepact-app.localhost
-            - -api=http://api-svc.k8s-mesh-demo:8080/albums
           image: app
           envFrom:
             - configMapRef:
                 name: config
           ports:
-            - containerPort: 8080
+            - containerPort: 3000
               name: http
-          livenessProbe:
-            httpGet:
-              path: /healthz
-              port: 8080
-            initialDelaySeconds: 5
-          readinessProbe:
-            httpGet:
-              path: /healthz
-              port: 8080
-            initialDelaySeconds: 5
